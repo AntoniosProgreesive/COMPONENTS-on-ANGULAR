@@ -1,0 +1,16 @@
+<h2>Διαχείριση Αντικειμένων</h2>
+
+<!-- Φόρμα Προσθήκης Νέου Αντικειμένου -->
+<div>
+  <input [(ngModel)]="newItem.name" placeholder="Όνομα" />
+  <input [(ngModel)]="newItem.description" placeholder="Περιγραφή" />
+  <button (click)="addItem()">Προσθήκη</button>
+</div>
+
+<!-- Λίστα Αντικειμένων -->
+<ul>
+  <li *ngFor="let item of items">
+    {{ item.name }}: {{ item.description }}
+    <button (click)="deleteItem(item.id)">Διαγραφή</button>
+  </li>
+</ul>
